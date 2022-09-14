@@ -8,15 +8,15 @@ I also do not take any responsibility if you connected this web app to the inter
 Keep it on a virtual machine and/or on a well isolated network.
 
 ## Techstack
-Linux
-Apache
-MySQL
-PHP 5.6
+- Linux
+- Apache
+- MySQL
+- PHP 5.6
 
 ## Frameworks
-Bootstrap (front-end)
+- Bootstrap (front-end)
 
 ## Vulnerabilities
-SQL Injection
-Remote Code Execution
-XSS
+- SQL Injection
+- Remote Code Execution
+- XSS
