@@ -11,9 +11,10 @@
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">Welcome to our cloud storage application! If you need to save some files and/or media, but you don't have the space on your computer... upload it to our cloud! We'll keep it safe for you!</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-primary">Upload Media</button>
+                    <button type="button" class="btn btn-primary upload-btn" onclick="window.location.pathname = '/upload';">Upload Media</button>
                 </div>
             </div>
         </div>
     </main>
+    <?php include_once('./components/footer.php')?>
 </body>
