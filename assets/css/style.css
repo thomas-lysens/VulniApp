@@ -8,6 +8,11 @@
 }
 
 .hero {
+    padding: 30vh 0!important;
     margin-top: 0!important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-btn {
+    padding: 15px 20px;
+    font-weight: bold;
 }
