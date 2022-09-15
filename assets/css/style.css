@@ -16,3 +16,34 @@
     padding: 15px 20px;
     font-weight: bold;
 }
+
+.form-frame {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    padding: 25px 75px;
+    border-radius: 0.5rem ;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.m-100 {
+    margin: 100px auto;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 990px) {
+    .form-frame {
+        padding: 25px 25px;
+    }
+}
