@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?
+<?php
 $path = $_SERVER['REQUEST_URI'];
 
 switch ($path) {
