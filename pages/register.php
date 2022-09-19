@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once(__DIR__ . '/../db/db.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,9 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($password)) {
             $query = "INSERT INTO local.users (email, password) VALUES ('$email', '$password');";
             $db = new DB();
-            $db = $db->connect('localhost', 'root', 'root', 'local', 3306);
+            $db = $db->connect('localhost', 'vulniapp', 'root', 'local', 3306);
             $db->query($query);
-            $db->close();
         } else {
             printf("<h1>There is no password given. Please enter a password!</h1>");
         }

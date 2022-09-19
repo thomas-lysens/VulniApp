@@ -1,5 +1,5 @@
 <?php
-include_once(__DIR__ . '../db/db.php');
+require_once(__DIR__ . '/../db/db.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -7,9 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($email)) {
         if (!empty($password)) {
-            $query = "INSERT INTO local.users (email, password) VALUES ('$email', '$password');";
+            $query = "SELECT * FROM local.users WHERE email = '$email');";
             $db = new DB();
-            $db->connect()->query($query)->close();
+            $db = $db->connect('localhost', 'vulniapp', 'root', 'local', 3306);
+	    $db->query($query);
         } else {
             printf("<h1>There is no password given. Please enter a password!</h1>");
         }
