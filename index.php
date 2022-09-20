@@ -2,6 +2,7 @@
 <html>
 <?php
 $path = $_SERVER['REQUEST_URI'];
+$user_logged_in = isset($_COOKIE["user_logged_in"]) ? $_COOKIE["user_logged_in"] : false;
 
 switch ($path) {
     case '/':

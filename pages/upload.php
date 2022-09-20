@@ -1,25 +1,8 @@
+<?php if ($user_logged_in != false) { ?>
 <head>
     <title>VulniApp - Upload</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href="./assets/css/style.css" type="text/css" rel="stylesheet"/>
-    <style>
-        .form-frame {
-            width: 80%;
-            padding: 25px;
-            margin: 25px auto;
-            border-radius: .375rem;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .form-frame > form {
-            text-align: center;
-        }
-
-        form > .input-group {
-            width: 80%;
-            margin: auto;
-        }
-    </style>
 </head>
 <body>
 <?php include_once('./components/header.php')?>
@@ -38,3 +21,8 @@
 </main>
 <?php include_once('./components/footer.php')?>
 </body>
+<?php } else {
+	    header("Location: ./login");
+	    exit();
+}
+?>

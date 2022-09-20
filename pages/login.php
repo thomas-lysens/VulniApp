@@ -7,10 +7,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($email)) {
         if (!empty($password)) {
-            $query = "SELECT * FROM local.users WHERE email = '$email');";
+            $query = "SELECT * FROM local.users WHERE email = '$email';";
             $db = new DB();
             $db = $db->connect('localhost', 'vulniapp', 'root', 'local', 3306);
-	    $db->query($query);
+	    $results = $db->query($query)->fetchAll();
+	    setcookie("user", $results[0]["email"], 0);
+	    setcookie("user_logged_in", "true", 0);
         } else {
             printf("<h1>There is no password given. Please enter a password!</h1>");
         }
