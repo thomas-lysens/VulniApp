@@ -20,7 +20,7 @@
 .form-frame {
     text-align: center;
     width: 50%;
-    margin: auto;
+    margin: 100px auto;
     padding: 25px 75px;
     border-radius: 0.5rem ;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
