@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    $results = $db->query($query)->fetchAll();
 	    setcookie("user", $results[0]["email"], 0);
 	    setcookie("user_logged_in", "true", 0);
+	    header("Location: ./");
+	    exit();
         } else {
             printf("<h1>There is no password given. Please enter a password!</h1>");
         }
