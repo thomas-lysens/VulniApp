@@ -19,13 +19,19 @@ switch ($path) {
         break;
     case '/contact':
         require_once(__DIR__ . '/pages/contact.php');
-        break;
+	break;
+    case '/documents':
+	require_once(__DIR__ . '/pages/documents.php');
+	break;
     case '/login':
         require_once(__DIR__ . '/pages/login.php');
         break;
     case '/register':
         require_once(__DIR__ . '/pages/register.php');
-        break;
+	break;
+    case '/logout':
+	require_once(__DIR__ . '/pages/logout.php');
+	break;
     default:
         require_once(__DIR__ . '/pages/404.php');
 }
