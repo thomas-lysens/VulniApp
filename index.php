@@ -14,9 +14,6 @@ switch ($path) {
     case '/upload':
         require_once(__DIR__ . '/pages/upload.php');
         break;
-    case '/pricing':
-        require_once(__DIR__ . '/pages/pricing.php');
-        break;
     case '/contact':
         require_once(__DIR__ . '/pages/contact.php');
 	break;
@@ -26,9 +23,6 @@ switch ($path) {
     case '/login':
         require_once(__DIR__ . '/pages/login.php');
         break;
-    case '/register':
-        require_once(__DIR__ . '/pages/register.php');
-	break;
     case '/logout':
 	require_once(__DIR__ . '/pages/logout.php');
 	break;
