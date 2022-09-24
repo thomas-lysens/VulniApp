@@ -2,24 +2,28 @@
 require_once(__DIR__ . '/../db/db.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if (!empty($email)) {
+    if (!empty($username)) {
         if (!empty($password)) {
-            $query = "SELECT * FROM local.users WHERE email = '$email';";
+            $query = "SELECT * FROM local.users WHERE username = '$username' AND password = '$password';";
             $db = new DB();
             $db = $db->connect('localhost', 'vulniapp', 'root', 'local', 3306);
 	    $results = $db->query($query)->fetchAll();
-	    setcookie("user", $results[0]["email"], 0);
-	    setcookie("user_logged_in", "true", 0);
-	    header("Location: ./");
-	    exit();
+	    if (!empty($results)) {
+	    	setcookie("user", $results[0]["username"], 0);
+	    	setcookie("user_logged_in", "true", 0);
+	    	header("Location: ./");
+	    	exit();
+	    } else {
+		    echo "Username or password did not match with anything what we have in our database";
+	    }
         } else {
             printf("<h1>There is no password given. Please enter a password!</h1>");
         }
     } else {
-        printf("<h1>There is no email given. Please enter an email!</h1>");
+        printf("<h1>There is no username given. Please enter an username!</h1>");
     }
 }
 ?>
@@ -36,8 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <form class="mb-4" method="POST" action="#">
                         <h1 class="h1 mb-3 fw-normal">Login</h1>
                         <div class="form-floating">
-                            <input type="email" placeholder="example@domain.com" class="form-control" id="floatingInput" name="email">
-                            <label for="floatingInput">Email</label>
+                            <input type="text" placeholder="Username" class="form-control" id="floatingInput" name="username">
+                            <label for="floatingInput">Username</label>
                         </div>
                         <div class="form-floating">
                             <input type="password" placeholder="password" class="form-control" id="floatingPassword" name="password">
@@ -45,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <button type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
                     </form>
-                    <p>Don't have an account? <a href="/register">Register here!</a></p>
+                    <p>Don't have an account? Contact our servicedesk and they will provide you with a login!</p>
                     <?php
                 ?>
             </div>
