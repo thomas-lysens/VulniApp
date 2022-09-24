@@ -10,9 +10,6 @@
                 <a href="/about" class="nav-link px-2 text-muted">About</a>
             </li>
             <li class="nav-item">
-                <a href="/pricing" class="nav-link px-2 text-muted">Pricing</a>
-            </li>
-            <li class="nav-item">
                 <a href="/contact" class="nav-link px-2 text-muted">Contact</a>
             </li>
             <li class="nav-item">
